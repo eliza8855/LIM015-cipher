@@ -5,10 +5,42 @@
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div id="root">
-      <h1>Hello world!</h1>
-    </div>
-    <script src="index.js" type="module"></script>
+   
+    <header id="root">
+      <h1>Cifrado de Mensajes Online</h1>
+    </header>
+
+    <section class="caja">
+      <h2>Cifra mensajes de manera gratuita e instantanea, usando el método de <a>Cifrado Cesar</a></h2>
+      <button class="botonInicio">Cifrar Mensaje</button>
+      <button class="botonInicio">Descifrar Mensaje</button>
+    </section>
+
+
+    <section>
+      <p>Cifrar Mensajes (encode)</p>
+      <textarea id="boxEncode1" class="box"></textarea>
+      <textarea id="boxEncode2" class="box" readonly></textarea >
+      <label for="textOffsetEncode">Offset:</label>
+      <input type="text" id="textOffsetEncode" value="">
+      <button id="btnOffsetEncode" class="btn">
+      Cifrar texto 
+      </button> 
+    </section>
+
+    
+    <section>
+      <p> Descifrar Mensajes (decode)</p>
+      <textarea id="boxDecode1" class="box"></textarea>
+      <textarea id="boxDecode2" class="box" readonly></textarea >
+      <label for="textOffsetDecode">Offset:</label>
+      <input type="text" id="textOffsetDecode" value="">
+      <button id="btnOffsetDecode" class="btn">
+      Descifrar texto 
+      </button>
+    </section>
+<script src="index.js" type="module"></script>
   </body>
 </html>
