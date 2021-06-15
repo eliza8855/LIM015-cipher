@@ -7,40 +7,73 @@
   </head>
 
   <body>
-   
-    <header id="root">
+     
+    <header>
       <h1>Cifrado de Mensajes Online</h1>
     </header>
 
-    <section class="caja">
+
+    <section id="bienvenida" class="caja">
       <h2>Cifra mensajes de manera gratuita e instantanea, usando el método de <a>Cifrado Cesar</a></h2>
-      <button class="botonInicio">Cifrar Mensaje</button>
-      <button class="botonInicio">Descifrar Mensaje</button>
+      <button class="botonInicio" id="btnEncodeStart">Cifrar Mensaje</button>
+      <button class="botonInicio" id="btnDecodeStart">Descifrar Mensaje</button>
     </section>
 
 
-    <section>
-      <p>Cifrar Mensajes (encode)</p>
+    <section id="encodeBox" class="caja">
+      <h3>Cifrar Mensaje</h3>
+      <p>Para cifrar un mensaje es importante que todo el texto lo escribas en <b>mayúsculas</b>. Solo se permite usar los siguientes signos de puntuación: "?", "¿", ".", ","</p>
+      
+      <legend>Mensaje original</legend>
       <textarea id="boxEncode1" class="box"></textarea>
+      
+      <legend>Mensaje cifrado</legend>
       <textarea id="boxEncode2" class="box" readonly></textarea >
-      <label for="textOffsetEncode">Offset:</label>
-      <input type="text" id="textOffsetEncode" value="">
-      <button id="btnOffsetEncode" class="btn">
-      Cifrar texto 
-      </button> 
+      <label for="textOffsetEncode">Llave:</label>
+      <input type="number" id="textOffsetEncode" placeholder="Ingresa tu llave aqui" >
+      <br>
+      <div class="caja-btn-main">
+        <div>
+          <button id="btnOffsetEncode" class="btn-main">
+          Cifrar texto 
+          </button>
+        </div>
+        <div>        
+          <button id="limpiarEncode" class="btn-main">
+          Limpiar 
+          </button>
+        </div>
+      </div>
+      <br>
+      <button id="btnDecode">Descifrar Mensaje</button>
+      <button id="home1">Inicio</button>
     </section>
 
-    
-    <section>
-      <p> Descifrar Mensajes (decode)</p>
+
+    <section id= "decodeBox" class="caja">
+      <h3> Descifrar Mensaje</h3>
+      <p>Para descifrar tu mensaje debes pegarlo en el primer recuadro, luego introducir la llave que te detallaron junto al mensaje encriptado y finalmente hacer clic en el boton "Descifrar texto".</p>
+      <legend>Mensaje cifrado</legend>
       <textarea id="boxDecode1" class="box"></textarea>
+      <legend>Mensaje Secreto Revelado</legend>
       <textarea id="boxDecode2" class="box" readonly></textarea >
-      <label for="textOffsetDecode">Offset:</label>
+      <label for="textOffsetDecode">Llave:</label>
       <input type="text" id="textOffsetDecode" value="">
-      <button id="btnOffsetDecode" class="btn">
-      Descifrar texto 
-      </button>
+      <br>
+      <div class="caja-btn-main">
+        <button id="btnOffsetDecode" class="btn-main">
+          Descifrar texto 
+        </button>
+      </div>
+     <br>
+      <button id="btnEncode">Cifrar Mensaje</button>
+      <button id="home2">Inicio</button>
     </section>
 <script src="index.js" type="module"></script>
+
+<footer>
+  Created with &#10084 by Elizabeth
+</footer>
   </body>
+
 </html>

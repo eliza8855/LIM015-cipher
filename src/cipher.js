@@ -1,58 +1,44 @@
 const cipher = {
 encode(offset,string){
+  if (offset === null || offset === 0 ) {
+    throw new TypeError();
+  }
   let newWord = "";
+  let n="";
   for (let i=0; i< string.length; i++) {
-  let n = (string.charCodeAt(i) - 65 + offset) % 26 + 65;
+    let strCharCode = string.charCodeAt(i);
+    if (strCharCode>64 && strCharCode<91){
+     n = (strCharCode - 65 + offset%26) % 26 + 65;
+    }else if (strCharCode>96 && strCharCode<123) {
+     n = (strCharCode - 97 + offset%26) % 26 + 97;
+    }else {
+     n = strCharCode;
+    }
   let str2 = String.fromCharCode(n);
   newWord += str2
-  };
-  document.getElementById("boxEncode2").innerHTML = newWord;
+  }
+  return newWord;
 },
 decode(offset,string){
+  if (offset === null || offset === 0 ) {
+    throw new TypeError();
+  }
   let newWord = "";
+  let n="";
   for (let i=0; i< string.length; i++) {
-  let n = (string.charCodeAt(i) - 39 - (offset%26))%26 + 65;
+    let strCharCode = string.charCodeAt(i);
+    if (strCharCode>64 && strCharCode<91){
+      n = (string.charCodeAt(i) - 39 - offset%26)%26 + 65;
+     }else if (strCharCode>96 && strCharCode<123) {
+      n = (string.charCodeAt(i) - 71 - offset%26)%26 + 97;
+     }else {
+      n = strCharCode;
+     }
   let str2 = String.fromCharCode(n);
   newWord += str2
-  };
-  let changeNewWord = newWord.replace(/:/g," ")
-  document.getElementById("boxDecode2").innerHTML = changeNewWord;
+  }
+  //let changeNewWord = newWord.replace(/:/g," ")
+  return newWord;
 }
 };
 export default cipher;
-
-
-
-
-
-
-
-
-
-
-
-
-/*offset,string*/
-
-
-/*let string = document.getElementById("boxEncode1").value;  // Llamado a caja 1
-  let result = "";
-  let offset = document.getElementById("textOffsetEncode").value; // Llamado al offset
-  for (let i=0; i<string.length; i++) {
-   let n = (string.charCodeAt(i)- 65 + offset) % 26 + 65; // Pasar de letras a ACSII con el offset
-   let stringConvert = String.fromCharCode(n); // Pasar de ACSII a letras normales
-   result += stringConvert; // uniendo las letras en el resultado
-   document.getElementById("boxEncode2").innerHTML = result; // ingresando el resultado a la caja 2
-   }*/
-/*},
-decode(offset,string){
-  /*let string = document.getElementById("boxEncode1").value; 
-  let result = "";
-  let offset = document.getElementById("textOffsetEncode").value;
-  for (let i=0; i<string.length; i++) {
-   let n = (string.charCodeAt(i)- 65 + offset) % 26 + 65;
-   let stringConvert = String.fromCharCode(n);
-   result += stringConvert;
-   document.getElementById("boxEncode2").innerHTML = result;
-   }
-}*/
