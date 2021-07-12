@@ -27,17 +27,16 @@ decode(offset,string){
   let n="";
   for (let i=0; i< string.length; i++) {
     let strCharCode = string.charCodeAt(i);
-    if (strCharCode>64 && strCharCode<91){
+    if (strCharCode>64 && strCharCode<91) {
       n = (string.charCodeAt(i) - 39 - offset%26)%26 + 65;
-     }else if (strCharCode>96 && strCharCode<123) {
+    } else if (strCharCode>96 && strCharCode<123) {
       n = (string.charCodeAt(i) - 71 - offset%26)%26 + 97;
-     }else {
+    } else {
       n = strCharCode;
      }
   let str2 = String.fromCharCode(n);
   newWord += str2
   }
-  //let changeNewWord = newWord.replace(/:/g," ")
   return newWord;
 }
 };

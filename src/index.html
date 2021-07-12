@@ -10,6 +10,7 @@
      
     <header>
       <h1>Cifrado de Mensajes Online</h1>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </header>
 
 
@@ -22,7 +23,7 @@
 
     <section id="encodeBox" class="caja">
       <h3>Cifrar Mensaje</h3>
-      <p>Para cifrar un mensaje es importante que todo el texto lo escribas en <b>mayúsculas</b>. Solo se permite usar los siguientes signos de puntuación: "?", "¿", ".", ","</p>
+      <p>Hola, aqui podrás cifrar el mensaje que desees, solo ten en cuenta que los números y caracteres que no sean letras mantendrán su valor original. No te preocupes si tu mensaje es largo, no hay restricciones en número de caracteres</p>
       
       <legend>Mensaje original</legend>
       <textarea id="boxEncode1" class="box"></textarea>
@@ -52,28 +53,37 @@
 
     <section id= "decodeBox" class="caja">
       <h3> Descifrar Mensaje</h3>
-      <p>Para descifrar tu mensaje debes pegarlo en el primer recuadro, luego introducir la llave que te detallaron junto al mensaje encriptado y finalmente hacer clic en el boton "Descifrar texto".</p>
+      <p>Para descifrar tu mensaje debes pegarlo en el primer recuadro, luego introducir la llave que te detallaron junto al mensaje encriptado y finalmente hacer clic en el botón "Descifrar texto".</p>
       <legend>Mensaje cifrado</legend>
       <textarea id="boxDecode1" class="box"></textarea>
       <legend>Mensaje Secreto Revelado</legend>
       <textarea id="boxDecode2" class="box" readonly></textarea >
       <label for="textOffsetDecode">Llave:</label>
-      <input type="text" id="textOffsetDecode" value="">
+      <input type="number" id="textOffsetDecode" value="">
       <br>
       <div class="caja-btn-main">
-        <button id="btnOffsetDecode" class="btn-main">
-          Descifrar texto 
-        </button>
+        <div>
+          <button id="btnOffsetDecode" class="btn-main">
+            Descifrar texto 
+          </button>
+        </div>
+        <div>
+          <button id="limpiarDecode" class="btn-main">
+            Limpiar 
+          </button>
+        </div>
       </div>
-     <br>
+       <br>
       <button id="btnEncode">Cifrar Mensaje</button>
       <button id="home2">Inicio</button>
     </section>
-<script src="index.js" type="module"></script>
+
 
 <footer>
   Created with &#10084 by Elizabeth
 </footer>
+
+<script src="index.js" type="module"></script>
   </body>
 
 </html>

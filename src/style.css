@@ -92,7 +92,7 @@ margin: 20px 10px 20px 10px;
 padding: 20px 30px 20px 30px;
 border-radius:30px;
 width: fit-content; 
-background-color:springgreen;
+background-color:#53F0D5;
 border-style:none;
 font-size:medium;
 font-weight:bold;
@@ -126,6 +126,6 @@ color:rgb(26, 24, 24);
 .box:hover{
 background-color:#e1e5e685;   
 }
-.box:onclick{
+.box:focus{
     border-style:none;
 }

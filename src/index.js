@@ -26,6 +26,27 @@ function startDecode() {
     
  document.getElementById("btnDecodeStart").addEventListener("click", startDecode)
  document.getElementById("btnDecode").addEventListener("click", startDecode)
+ 
+
+function cleanTextEncode(){
+    document.getElementById("textOffsetEncode").value = "";
+    document.getElementById("boxEncode1").value = "";
+    document.getElementById("boxEncode2").innerHTML = "";
+}
+
+document.getElementById("limpiarEncode").addEventListener("click", cleanTextEncode)
+document.getElementById("home1").addEventListener("click", cleanTextEncode)
+document.getElementById("home2").addEventListener("click", cleanTextEncode)
+
+function cleanTextDecode(){
+    document.getElementById("textOffsetDecode").value = "";
+    document.getElementById("boxDecode1").value = "";
+    document.getElementById("boxDecode2").innerHTML = "";
+}
+
+document.getElementById("limpiarDecode").addEventListener("click", cleanTextDecode)
+document.getElementById("home1").addEventListener("click", cleanTextDecode)
+document.getElementById("home2").addEventListener("click", cleanTextDecode)
 
 const capturarInputEncode = () => {
 let offset = parseInt(document.getElementById("textOffsetEncode").value);
